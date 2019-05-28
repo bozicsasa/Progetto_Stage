@@ -8,18 +8,18 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.RowSpan="3" ItemsSource="{Binding GpsLocations}">
+        <ListBox Grid.RowSpan="3" ItemsSource="{Binding GpxPointsCollection}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Cognome}"/>
+                    <TextBlock Text="{Binding Data}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button VerticalAlignment="Bottom" Grid.Column="1" Content="Importa" Height="50" Command="{Binding ImportCommand}"/>
+        <Button VerticalAlignment="Bottom" Grid.Column="1" Content="Importa" Height="100" Command="{Binding ImportCommand}"/>
     </Grid>
 </Window>

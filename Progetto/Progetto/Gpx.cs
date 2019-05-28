@@ -50,6 +50,7 @@ namespace Gpx
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double? Elevation { get; set; }
+        public string Data { get; set; }
         public DateTime? Time { get; set; }
 
         public double? MagneticVar

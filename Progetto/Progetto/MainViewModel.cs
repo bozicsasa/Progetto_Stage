@@ -15,15 +15,28 @@ using System.Xml.Serialization;
 
 namespace Progetto
 {
-    class MainViewModel
+    class MainViewModel : INotifyPropertyChanged
     {
         public MainViewModel()
         {
             ImportCommand = new RelayCommand(Import);
-            GpxPointsCollection = new List<GpxPoint>();
+            GpxPointsCollection = new ObservableCollection<GpxPoint>();
         }
 
-        public List<GpxPoint> GpxPointsCollection { get; set; }
+        private ObservableCollection<GpxPoint> gpxPointsCollection;
+
+        public ObservableCollection<GpxPoint> GpxPointsCollection
+        {
+            get { return gpxPointsCollection; }
+            set { gpxPointsCollection = value; OnPropertyChange(nameof(GpxPointsCollection)); }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChange(string obj)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(obj));
+        }
 
         private XDocument GetGpxDoc(string sFile)
         {
@@ -92,7 +105,8 @@ namespace Progetto
                     {
                         Latitude = Convert.ToDouble(latitude),
                         Longitude = Convert.ToDouble(longitude),
-                        Time = DateTime.ParseExact(time, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
+                        Time = DateTime.ParseExact(time, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
+                        Data = $"Time {time} - Lat: {latitude} - Lon: {longitude}"
                     });
                 }
             }
