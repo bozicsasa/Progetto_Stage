@@ -1,6 +1,4 @@
 ﻿using Gpx;
-using Itinero;
-using Itinero.Osm.Vehicles;
 using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
@@ -23,7 +21,6 @@ namespace Progetto
         }
 
         private ObservableCollection<GpxPoint> gpxPointsCollection;
-
         public ObservableCollection<GpxPoint> GpxPointsCollection
         {
             get { return gpxPointsCollection; }
@@ -102,8 +99,8 @@ namespace Progetto
 
                     GpxPointsCollection.Add(new GpxPoint
                     {
-                        Latitude = Convert.ToDouble(latitude),
-                        Longitude = Convert.ToDouble(longitude),
+                        Latitude = Convert.ToDouble(latitude, CultureInfo.InvariantCulture),
+                        Longitude = Convert.ToDouble(longitude, CultureInfo.InvariantCulture),
                         Time = DateTime.ParseExact(time, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
                         Data = $"Time {time} - Lat: {latitude} - Lon: {longitude}"
                     });

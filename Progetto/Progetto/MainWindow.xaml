@@ -7,6 +7,7 @@
         xmlns:dxm="http://schemas.devexpress.com/winfx/2008/xaml/map"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -19,6 +20,20 @@
             <dxm:ImageLayer>
                 <dxm:OpenStreetMapDataProvider/>
             </dxm:ImageLayer>
+
+            <dxm:VectorLayer>
+                <dxm:VectorLayer.Data>
+                    <dxm:ListSourceDataAdapter DataSource="{Binding GpxPointsCollection}">
+                        <dxm:ListSourceDataAdapter.Mappings>
+                            <dxm:MapItemMappingInfo Latitude="Latitude" Longitude="Longitude"/>
+                        </dxm:ListSourceDataAdapter.Mappings>
+                        <dxm:ListSourceDataAdapter.ItemSettings>
+                            <dxm:MapDotSettings Size="30"/>
+                        </dxm:ListSourceDataAdapter.ItemSettings>
+                    </dxm:ListSourceDataAdapter>
+                </dxm:VectorLayer.Data>
+            </dxm:VectorLayer>
+            
         </dxm:MapControl>
 
 
