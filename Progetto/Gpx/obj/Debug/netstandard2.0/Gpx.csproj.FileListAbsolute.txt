@@ -1,0 +1,9 @@
+C:\Users\Pavilion\source\repos\Progetto\Gpx\bin\Debug\netstandard2.0\Gpx.deps.json
+C:\Users\Pavilion\source\repos\Progetto\Gpx\bin\Debug\netstandard2.0\Gpx.dll
+C:\Users\Pavilion\source\repos\Progetto\Gpx\bin\Debug\netstandard2.0\Gpx.pdb
+C:\Users\Pavilion\source\repos\Progetto\Gpx\obj\Debug\netstandard2.0\Gpx.csprojAssemblyReference.cache
+C:\Users\Pavilion\source\repos\Progetto\Gpx\obj\Debug\netstandard2.0\Gpx.csproj.CoreCompileInputs.cache
+C:\Users\Pavilion\source\repos\Progetto\Gpx\obj\Debug\netstandard2.0\Gpx.AssemblyInfoInputs.cache
+C:\Users\Pavilion\source\repos\Progetto\Gpx\obj\Debug\netstandard2.0\Gpx.AssemblyInfo.cs
+C:\Users\Pavilion\source\repos\Progetto\Gpx\obj\Debug\netstandard2.0\Gpx.dll
+C:\Users\Pavilion\source\repos\Progetto\Gpx\obj\Debug\netstandard2.0\Gpx.pdb

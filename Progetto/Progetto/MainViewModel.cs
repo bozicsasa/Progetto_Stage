@@ -1,17 +1,14 @@
 ﻿using Gpx;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace Progetto
 {
@@ -24,7 +21,6 @@ namespace Progetto
         }
 
         private ObservableCollection<GpxPoint> gpxPointsCollection;
-
         public ObservableCollection<GpxPoint> GpxPointsCollection
         {
             get { return gpxPointsCollection; }
@@ -103,8 +99,8 @@ namespace Progetto
 
                     GpxPointsCollection.Add(new GpxPoint
                     {
-                        Latitude = Convert.ToDouble(latitude),
-                        Longitude = Convert.ToDouble(longitude),
+                        Latitude = Convert.ToDouble(latitude, CultureInfo.InvariantCulture),
+                        Longitude = Convert.ToDouble(longitude, CultureInfo.InvariantCulture),
                         Time = DateTime.ParseExact(time, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
                         Data = $"Time {time} - Lat: {latitude} - Lon: {longitude}"
                     });
