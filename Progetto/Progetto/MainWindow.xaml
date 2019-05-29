@@ -4,22 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Progetto"
+        xmlns:dxm="http://schemas.devexpress.com/winfx/2008/xaml/map"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Button  Content="Importa" Command="{Binding ImportCommand}"/>
 
-        <ListBox Grid.RowSpan="3" ItemsSource="{Binding GpxPointsCollection}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Data}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
 
-        <Button VerticalAlignment="Bottom" Grid.Column="1" Content="Importa" Height="100" Command="{Binding ImportCommand}"/>
+        <dxm:MapControl Grid.Row="1" ZoomLevel="4" >
+            <dxm:ImageLayer>
+                <dxm:OpenStreetMapDataProvider/>
+            </dxm:ImageLayer>
+        </dxm:MapControl>
+
+
     </Grid>
 </Window>

@@ -1,17 +1,16 @@
 ﻿using Gpx;
+using Itinero;
+using Itinero.Osm.Vehicles;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace Progetto
 {
